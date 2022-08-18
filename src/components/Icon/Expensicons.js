@@ -84,6 +84,8 @@ import Workspace from '../../../assets/images/workspace-default-avatar.svg';
 import Zoom from '../../../assets/images/zoom.svg';
 import FallbackAvatar from '../../../assets/images/avatars/fallback-avatar.svg';
 import FallbackWorkspaceAvatar from '../../../assets/images/avatars/fallback-workspace-avatar.svg';
+import PlayIcon from '../../../assets/images/play.svg';
+import videoIcon from '../../../assets/images/video-icon.svg';
 
 export {
     ActiveRoomAvatar,
@@ -172,4 +174,6 @@ export {
     Wallet,
     Workspace,
     Zoom,
+    PlayIcon,
+    videoIcon,
 };

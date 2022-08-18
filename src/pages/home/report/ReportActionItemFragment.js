@@ -15,6 +15,8 @@ import withLocalize, {withLocalizePropTypes} from '../../../components/withLocal
 import canUseTouchScreen from '../../../libs/canUseTouchscreen';
 import compose from '../../../libs/compose';
 import * as StyleUtils from '../../../styles/StyleUtils';
+import Video from '../../../components/Video';
+import addEncryptedAuthTokenToURL from '../../../libs/addEncryptedAuthTokenToURL';
 
 const propTypes = {
     /** The message fragment needing to be displayed */
@@ -107,6 +109,14 @@ const ReportActionItemFragment = (props) => {
             if (html !== text) {
                 const editedTag = props.fragment.isEdited ? '<edited></edited>' : '';
                 const htmlContent = html + editedTag;
+                if (Str.isVideo(html)) {
+                    return (
+                        <Video
+                            src={addEncryptedAuthTokenToURL(html.match(/<a href="[^"]+\.(mp4|mov|webm|ogg)"/i)[0].slice(9, -1))}
+                            ext={Str.isVideo(html)}
+                        />
+                    );
+                }
                 return (
                     <RenderHTML
                         html={props.source === 'email'

@@ -12,6 +12,7 @@ import compose from '../libs/compose';
 import Text from './Text';
 import Tooltip from './Tooltip';
 import themeColors from '../styles/themes/default';
+import AttachedVideo from './Video/AttachmentVideo';
 
 const propTypes = {
     /** URL to full-sized attachment */
@@ -57,6 +58,13 @@ const AttachmentView = (props) => {
     if (Str.isImage(props.sourceURL) || (props.file && Str.isImage(props.file.name))) {
         return (
             <ImageView url={props.sourceURL} />
+        );
+    }
+
+    // Check if the file name ends with mp4,ogg,mov,webm which means it is a video file
+    if (Str.isVideo(null, props.file.name)) {
+        return (
+            <AttachedVideo file={props.file} ext={Str.isVideo(null, props.file.name)} />
         );
     }
 

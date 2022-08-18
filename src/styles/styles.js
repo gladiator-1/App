@@ -125,6 +125,12 @@ const webViewStyles = {
             borderWidth: 1,
         },
 
+        video: {
+            borderColor: themeColors.border,
+            borderRadius: variables.componentBorderRadiusNormal,
+            borderWidth: 1,
+        },
+
         p: {
             marginTop: 0,
             marginBottom: 0,
@@ -2662,6 +2668,20 @@ const styles = {
         fontSize: variables.fontSizeLabel,
         fontFamily: fontFamily.GTA,
         marginLeft: 6,
+    },
+
+    videoIconContainer: {
+        flexDirection: 'row',
+        position: 'absolute',
+        bottom: 20,
+        left: 25,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    videoDurationText: {
+        fontSize: 14,
+        fontWeight: 'bold',
     },
 };
 
